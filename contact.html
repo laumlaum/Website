@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marco Lau | Contact</title>
+  <meta name="description" content="Contact Marco Lau for project links, internships, or engineering opportunities.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-mark">ML</span>
+        <span>Marco Lau</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page-title">
+      <div class="kicker">Contact</div>
+      <h1>Contact</h1>
+      <p>
+        I’m open to engineering opportunities, internships, and to connect with other like-minded people!
+      </p>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="contact-grid">
+
+          <div class="contact-panel">
+            <h2>Contact details</h2>
+            <p class="intro">
+              Feel free to reach out if you want to discuss a project, opportunity,
+              or anything engineering related.
+            </p>
+
+            <div class="contact-links">
+              <a href="mailto:laum7417@gmail.com">laum7417@gmail.com</a>
+              <a href="https://linkedin.com/in/marco-laum" target="_blank" rel="noopener">
+                linkedin.com/in/marco-laum
+              </a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="small-print">© 2026 Marco Lau. Built and maintained by Marco Lau.</p>
+    </div>
+  </footer>
+
+  <script>
+    function sendEmail(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent("Portfolio contact from " + name);
+
+      const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        "Message:\n" + message
+      );
+
+      window.location.href = "mailto:laum7417@gmail.com?subject=" + subject + "&body=" + body;
+    }
+  </script>
+</body>
+</html>

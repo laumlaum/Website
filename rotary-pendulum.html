@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marco Lau | Rotary Inverted Pendulum</title>
+<meta name="description" content="Rotary inverted pendulum (Furuta-style) build by Marco Lau — STM32 control firmware, stepper motor drive, and custom mechanical rig.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-mark">ML</span>
+        <span>Marco Lau</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="education.html">Education</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap project-hero">
+      <a class="back-link" href="projects.html">&larr; Back to projects</a>
+      <div class="kicker">Personal project</div>
+      <div class="status-row">
+        <span class="status-chip">Built</span>
+      </div>
+      <h1>Rotary Inverted Pendulum</h1>
+
+      <!-- ====== EDIT BELOW: short one-line summary ====== -->
+      <p class="intro">
+        <!-- One or two sentences summarising the project. -->
+        A Furuta-style inverted pendulum that balances itself using a rotating arm,
+        a stepper motor, and embedded control firmware.
+      </p>
+      <!-- ====== END EDIT ====== -->
+
+      <div class="tags">
+        <span class="tag">Control</span>
+        <span class="tag">STM32</span>
+        <span class="tag">PID Controls</span>
+        <span class="tag">Reinforcement Learning</span>
+        <span class="tag">Mechanical design</span>
+      </div>
+
+      <div class="project-hero-image">Add main project photo / hero shot here</div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="info-grid">
+          <article class="info-card" style="grid-column: span 2;">
+
+            <!-- ====== BUILD LOG TEMPLATE: fill in each section below ====== -->
+            <div class="build-log">
+
+              <div class="build-log-step">
+                <div class="build-log-label">Overview</div>
+                <div class="build-log-content">
+                  <p>
+                    <!-- 2-4 sentences: what is this project, at a glance? -->
+                  </p>
+                </div>
+              </div>
+
+              <div class="build-log-step">
+                <div class="build-log-label">Problem</div>
+                <div class="build-log-content">
+                  <p>
+                    <!-- What were you trying to achieve, or what challenge motivated the build? -->
+                  </p>
+                </div>
+              </div>
+
+              <div class="build-log-step">
+                <div class="build-log-label">Approach</div>
+                <div class="build-log-content">
+                  <p>
+                    <!-- How did you design and build it? Mechanical design, electronics, firmware, control approach, etc. Feel free to add multiple paragraphs or a sub-heading per area, e.g.: -->
+                  </p>
+                  <h3>Mechanical</h3>
+                  <p>
+                    <!-- CAD, materials, machining, assembly notes -->
+                  </p>
+                  <h3>Electronics</h3>
+                  <p>
+                    <!-- Driver circuit, wiring, power, sensors -->
+                  </p>
+                  <h3>Firmware / Control</h3>
+                  <p>
+                    <!-- STM32 setup, control algorithm, tuning process -->
+                  </p>
+                </div>
+              </div>
+
+              <div class="build-log-step">
+                <div class="build-log-label">Result</div>
+                <div class="build-log-content">
+                  <p>
+                    <!-- What worked? Any numbers/specs worth sharing (settle time, angle range, etc.) -->
+                  </p>
+                </div>
+              </div>
+
+              <div class="build-log-step">
+                <div class="build-log-label">What's next</div>
+                <div class="build-log-content">
+                  <p>
+                    <!-- Future improvements, things you'd do differently, next features -->
+                  </p>
+                </div>
+              </div>
+
+            </div>
+            <!-- ====== END BUILD LOG TEMPLATE ====== -->
+
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Specs</h2>
+          <p>Quick reference for the build.</p>
+        </div>
+        <!-- ====== EDIT: adjust rows as needed ====== -->
+        <div class="specs-list">
+          <div class="spec-row"><strong>MCU</strong><span>STM32</span></div>
+          <div class="spec-row"><strong>Actuator</strong><span>Stepper motor + driver</span></div>
+          <div class="spec-row"><strong>Control method</strong><span><!-- e.g. PID, state feedback, etc. --></span></div>
+          <div class="spec-row"><strong>Sensing</strong><span><!-- e.g. rotary encoder --></span></div>
+          <div class="spec-row"><strong>Build time</strong><span><!-- optional --></span></div>
+        </div>
+        <!-- ====== END EDIT ====== -->
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Gallery</h2>
+          <p>Photos and footage from the build.</p>
+        </div>
+        <!-- ====== EDIT: replace each gallery-item with an <img> tag once you have photos, e.g.
+             <div class="gallery-item"><img src="images/pendulum-1.jpg" alt="..."></div>
+        ====== -->
+        <div class="gallery-strip detail">
+          <div class="gallery-item">CAD model</div>
+          <div class="gallery-item">PCB / wiring</div>
+          <div class="gallery-item tall">Full build photo</div>
+          <div class="gallery-item">Demo video / GIF</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Links</h2>
+        </div>
+        <!-- ====== EDIT: replace with real links once code is uploaded ====== -->
+        <div class="project-links-row">
+          <a href="#">Code (coming soon)</a>
+          <a href="#">Demo video (coming soon)</a>
+        </div>
+        <!-- ====== END EDIT ====== -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="small-print">© 2026 Marco Lau. Replace placeholders with your own photos, email, GitHub, and LinkedIn.</p>
+    </div>
+  </footer>
+</body>
+</html>
