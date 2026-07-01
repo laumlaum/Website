@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marco Lau | Rotary Inverted Pendulum</title>
-<meta name="description" content="Rotary inverted pendulum (Furuta-style) build by Marco Lau — STM32 control firmware, stepper motor drive, and custom mechanical rig.">
+<title>Marco Lau | Furuta Pendulum</title>
+<meta name="description" content="Furuta pendulum project by Marco Lau — Arduino Uno, ATmega328P, encoder feedback, stepper motor control, PID testing, and LQR balancing.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="wrap nav">
@@ -17,6 +19,7 @@
         <span class="brand-mark">ML</span>
         <span>Marco Lau</span>
       </a>
+
       <nav class="nav-links" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -28,101 +31,133 @@
   </header>
 
   <main>
-    <div class="wrap project-hero">
-      <a class="back-link" href="projects.html">&larr; Back to projects</a>
-      <div class="kicker">Personal project</div>
-      <div class="status-row">
-        <span class="status-chip">Built</span>
+    <div class="wrap project-hero project-hero-split">
+      <div class="project-hero-text">
+        <a class="back-link" href="projects.html">&larr; Back to projects</a>
+
+        <div class="kicker">Personal project</div>
+
+        <div class="status-row">
+          <span class="status-chip">Balancing achieved</span>
+        </div>
+
+        <h1>Furuta Pendulum</h1>
+
+        <p class="intro">
+          A rotary inverted pendulum built to turn control theory into something physical.
+          I used an Arduino Uno, stepper motor, encoder feedback, and LQR control to balance
+          the pendulum upright.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Control Systems</span>
+          <span class="tag">Arduino Uno</span>
+          <span class="tag">ATmega328P</span>
+          <span class="tag">LQR</span>
+          <span class="tag">Embedded C</span>
+          <span class="tag">Debugging</span>
+        </div>
       </div>
-      <h1>Rotary Inverted Pendulum</h1>
 
-      <!-- ====== EDIT BELOW: short one-line summary ====== -->
-      <p class="intro">
-        <!-- One or two sentences summarising the project. -->
-        A Furuta-style inverted pendulum that balances itself using a rotating arm,
-        a stepper motor, and embedded control firmware.
-      </p>
-      <!-- ====== END EDIT ====== -->
-
-      <div class="tags">
-        <span class="tag">Control</span>
-        <span class="tag">STM32</span>
-        <span class="tag">PID Controls</span>
-        <span class="tag">Reinforcement Learning</span>
-        <span class="tag">Mechanical design</span>
-      </div>
-
-      <div class="project-hero-image">Add main project photo / hero shot here</div>
+      <div class="project-hero-image image-hero video-hero youtube-hero">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/fmiFmua_sis?rel=0"
+    title="Furuta pendulum balancing demo"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
     </div>
 
     <section>
       <div class="wrap">
         <div class="info-grid">
           <article class="info-card" style="grid-column: span 2;">
-
-            <!-- ====== BUILD LOG TEMPLATE: fill in each section below ====== -->
             <div class="build-log">
 
               <div class="build-log-step">
-                <div class="build-log-label">Overview</div>
+                <div class="build-log-label">Why I built it</div>
                 <div class="build-log-content">
                   <p>
-                    <!-- 2-4 sentences: what is this project, at a glance? -->
+                    After finishing COMPSYS 201, I wanted to stop only memorising theory and
+                    actually use it. That course taught me the basics of the ATmega328P, which
+                    is the same microcontroller used in the Arduino Uno R3. This made the Arduino
+                    a good choice because I could connect what I had learned about registers,
+                    interrupts, timing, and embedded systems to a real project.
+                  </p>
+                  <p>
+                    The Furuta pendulum felt like the right challenge: difficult enough to need
+                    real control theory, but still feasible to build with parts I could access.
                   </p>
                 </div>
               </div>
 
               <div class="build-log-step">
-                <div class="build-log-label">Problem</div>
+                <div class="build-log-label">What I did</div>
                 <div class="build-log-content">
                   <p>
-                    <!-- What were you trying to achieve, or what challenge motivated the build? -->
+                    I built a rotary inverted pendulum using a NEMA17 stepper motor, a TMC2209
+                    driver, a quadrature encoder, and an Arduino Uno. The encoder measures the
+                    pendulum angle while the stepper motor rotates the arm to keep the pendulum
+                    balanced upright.
+                  </p>
+                  <p>
+                    I first tried an inner and outer PID controller, but it was difficult to tune
+                    and did not give the stability I wanted. I then switched to an LQR controller,
+                    which worked much better because it controls the system using the full state
+                    instead of reacting to only one error at a time.
                   </p>
                 </div>
               </div>
 
               <div class="build-log-step">
-                <div class="build-log-label">Approach</div>
+                <div class="build-log-label">Debugging</div>
                 <div class="build-log-content">
                   <p>
-                    <!-- How did you design and build it? Mechanical design, electronics, firmware, control approach, etc. Feel free to add multiple paragraphs or a sub-heading per area, e.g.: -->
+                    One of the hardest issues was noisy encoder readings. I used an oscilloscope
+                    to check the encoder signals and narrow down whether the issue was wiring,
+                    pull-ups, power, or code.
                   </p>
-                  <h3>Mechanical</h3>
                   <p>
-                    <!-- CAD, materials, machining, assembly notes -->
-                  </p>
-                  <h3>Electronics</h3>
-                  <p>
-                    <!-- Driver circuit, wiring, power, sensors -->
-                  </p>
-                  <h3>Firmware / Control</h3>
-                  <p>
-                    <!-- STM32 setup, control algorithm, tuning process -->
+                    The fault ended up being a bad USB cable connected to the Arduino. Replacing
+                    it fixed the signal problem and made the controller behave much more
+                    consistently.
                   </p>
                 </div>
               </div>
 
               <div class="build-log-step">
-                <div class="build-log-label">Result</div>
+                <div class="build-log-label">What I learned</div>
                 <div class="build-log-content">
                   <p>
-                    <!-- What worked? Any numbers/specs worth sharing (settle time, angle range, etc.) -->
+                    This project helped me connect embedded programming, motor control, signal
+                    debugging, and control theory in one build. I learned that a controller is
+                    only as good as the hardware signals feeding it, and that debugging the
+                    physical system matters just as much as the code.
                   </p>
                 </div>
               </div>
 
               <div class="build-log-step">
-                <div class="build-log-label">What's next</div>
+                <div class="build-log-label">Next step</div>
                 <div class="build-log-content">
                   <p>
-                    <!-- Future improvements, things you'd do differently, next features -->
+                    The pendulum currently balances once it is placed upright. My next goal is
+                    swing-up control, where the system brings itself from the hanging position
+                    to upright automatically.
+                  </p>
+                  <p>
+                    I want to explore reinforcement learning for this using MuJoCo, MATLAB,
+                    and Simulink. The plan is to train and test the swing-up behaviour in
+                    simulation first, then combine it with the existing LQR controller for
+                    upright balancing.
                   </p>
                 </div>
               </div>
 
             </div>
-            <!-- ====== END BUILD LOG TEMPLATE ====== -->
-
           </article>
         </div>
       </div>
@@ -134,32 +169,15 @@
           <h2>Specs</h2>
           <p>Quick reference for the build.</p>
         </div>
-        <!-- ====== EDIT: adjust rows as needed ====== -->
-        <div class="specs-list">
-          <div class="spec-row"><strong>MCU</strong><span>STM32</span></div>
-          <div class="spec-row"><strong>Actuator</strong><span>Stepper motor + driver</span></div>
-          <div class="spec-row"><strong>Control method</strong><span><!-- e.g. PID, state feedback, etc. --></span></div>
-          <div class="spec-row"><strong>Sensing</strong><span><!-- e.g. rotary encoder --></span></div>
-          <div class="spec-row"><strong>Build time</strong><span><!-- optional --></span></div>
-        </div>
-        <!-- ====== END EDIT ====== -->
-      </div>
-    </section>
 
-    <section>
-      <div class="wrap">
-        <div class="section-title">
-          <h2>Gallery</h2>
-          <p>Photos and footage from the build.</p>
-        </div>
-        <!-- ====== EDIT: replace each gallery-item with an <img> tag once you have photos, e.g.
-             <div class="gallery-item"><img src="images/pendulum-1.jpg" alt="..."></div>
-        ====== -->
-        <div class="gallery-strip detail">
-          <div class="gallery-item">CAD model</div>
-          <div class="gallery-item">PCB / wiring</div>
-          <div class="gallery-item tall">Full build photo</div>
-          <div class="gallery-item">Demo video / GIF</div>
+        <div class="specs-list">
+          <div class="spec-row"><strong>System</strong><span>Rotary inverted pendulum / Furuta pendulum</span></div>
+          <div class="spec-row"><strong>MCU</strong><span>Arduino Uno R3 using the ATmega328P</span></div>
+          <div class="spec-row"><strong>Actuator</strong><span>NEMA17 stepper motor</span></div>
+          <div class="spec-row"><strong>Driver</strong><span>TMC2209 stepper motor driver</span></div>
+          <div class="spec-row"><strong>Sensor</strong><span>Quadrature encoder for pendulum angle feedback</span></div>
+          <div class="spec-row"><strong>Control</strong><span>PID tested first, then LQR used for balancing</span></div>
+          <div class="spec-row"><strong>Future work</strong><span>Reinforcement learning swing-up in MuJoCo / MATLAB / Simulink</span></div>
         </div>
       </div>
     </section>
@@ -169,19 +187,19 @@
         <div class="section-title">
           <h2>Links</h2>
         </div>
-        <!-- ====== EDIT: replace with real links once code is uploaded ====== -->
+
         <div class="project-links-row">
-          <a href="#">Code (coming soon)</a>
-          <a href="#">Demo video (coming soon)</a>
+          <a href="https://github.com/laumlaum" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.youtube.com/shorts/fmiFmua_sis" target="_blank" rel="noopener">Demo video</a>
+          <a href="contact.html">Ask me about this project</a>
         </div>
-        <!-- ====== END EDIT ====== -->
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <p class="small-print">© 2026 Marco Lau. Replace placeholders with your own photos, email, GitHub, and LinkedIn.</p>
+      <p class="small-print">© 2026 Marco Lau.</p>
     </div>
   </footer>
 </body>
